@@ -14,7 +14,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 	var args = []string{"-i", "https://www.youtube.com/watch?v=6g4dkBF5anU"}
 	if err := app.New().Run(args); err != nil {
 		fmt.Fprintf(
-			color.Output,
+			w,
 			"Run %s failed: %s\n",
 			color.CyanString("%s", app.Name), color.RedString("%v", err),
 		)
